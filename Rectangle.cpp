@@ -94,8 +94,4 @@ void Fish::getting_hungrier()
 	y = y + rand() % speed;
 }
 
-int main()
-{
-	int h=900;
-	return 0;
-}
+
