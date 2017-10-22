@@ -11,9 +11,9 @@ public:
 	int get_heigth();
 	~Rectangle();
 };
-class Water : public Rectangle																																																																																														``																````````````````````````````````````````````````																																					```````````																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																					````````````````````````````````````````````````````````````````````							```																																																																																																																																																													`````````````````````````																																																																																																																																																																																																																																																																									```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````																																																																																																																																																																																																																																																																																																																																														````````````````````````````																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															``````````````																																																																																											
-{	
-private :
+class Water:public Rectangle
+{
+private:
 	bool condition;
 public:
 	Water();
@@ -22,6 +22,7 @@ public:
 	bool get_condition();
 	void set_condition(bool);
 };
+
 class Fish : public Rectangle
 {
 private:
@@ -35,7 +36,7 @@ public:
 	int get_y();
 	void getting_hungrier();
 	void random_moving();
-	void set_speed(int)
+	void set_speed(int);
 };
 class NemoFish : public Fish
 {

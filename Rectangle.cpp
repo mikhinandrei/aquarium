@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "Rectangle.h"
 #include <iostream>
-#include <stdio.h>
 #include <dos.h>
 
 using namespace std;
+
 
 
 Rectangle::Rectangle()
@@ -19,22 +19,22 @@ Rectangle::~Rectangle()
 
 }
 
-Rectangle::void set_height(int h)
+void Rectangle::set_height(int h)
 {
 	height = h;
 }
 
-Rectangle::void set_length(int l)
+void Rectangle::set_length(int l)
 {
 	length = l;
 }
 
-Rectangle::int get_length()
+int Rectangle:: get_length()
 {
 	return length;
 }
 
-Rectangle::int get_height()
+int Rectangle::get_heigth()
 {
 	return length;
 }
@@ -49,21 +49,24 @@ Water::~Water()
 
 }
 
-Water:: void set_condition(bool con)
+ void Water:: set_condition(bool con)
 {
-	condition = con;
+	 condition = con;
 }
 
-Water:: bool get_condition()
+bool Water:: get_condition()
 {
 	return condition;
 }
 
-Water:: void clear_water()
+void Water:: clear_water()
 {
 	condition = 1;
 }
+Fish::~Fish()
+{
 
+}
 Fish::Fish()
 {
 	hunger = 100;
@@ -71,20 +74,28 @@ Fish::Fish()
 	y = rand() % 900;
 	speed = 20;
 }
-Fish::void set_speed(int sp)
+void Fish:: set_speed(int sp)
 {
 	speed = sp;
 }
 
-Fish:: void getting_hungrier();
+void Fish::getting_hungrier()
 {
-	while (hunger != 0) {
+	while (hunger != 0)
+	{
 		hunger -= 1;
 		sleep(10);
+	}
 }
 
-Fish:: void random_moving();
+	void Fish::random_moving()
 {
 	x = x + rand() % speed;
 	y = y + rand() % speed;
+}
+
+int main()
+{
+	int h=900;
+	return 0;
 }
