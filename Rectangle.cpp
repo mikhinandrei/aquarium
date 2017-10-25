@@ -90,8 +90,16 @@ void Fish::getting_hungrier()
 
 	void Fish::random_moving()
 {
-	x = x + rand() % speed;
-	y = y + rand() % speed;
+		int xrand, yrand;
+		xrand = -1 + rand() % 3;
+		yrand = -1 + rand() % 3;
+			x = x + randx*(rand() % speed);
+			y = y + randy*(rand() % speed);
+			if (abs(x) > length)
+				x = x - 2 * randx*(rand() % speed);
+			if (abs(y) > height)
+				y = y - 2 * randy*(rand() % speed);
+
 }
 
 
