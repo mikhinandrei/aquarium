@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "Rectangle.h"
 #include <iostream>
-#include <dos.h>
-#include"stdlib.h"
 using namespace std;
 
 
