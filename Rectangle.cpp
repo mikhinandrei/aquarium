@@ -2,15 +2,15 @@
 #include "Rectangle.h"
 #include <iostream>
 #include <dos.h>
-
+#include"stdlib.h"
 using namespace std;
 
 
 
 Rectangle::Rectangle()
 {
-	length = 0;
-	height = 0;
+	length = 900;
+	height = 900;
 }
 
 
@@ -29,7 +29,7 @@ void Rectangle::set_length(int l)
 	length = l;
 }
 
-int Rectangle:: get_length()
+int Rectangle::get_length()
 {
 	return length;
 }
@@ -49,17 +49,17 @@ Water::~Water()
 
 }
 
- void Water:: set_condition(bool con)
+void Water::set_condition(bool con)
 {
-	 condition = con;
+	condition = con;
 }
 
-bool Water:: get_condition()
+bool Water::get_condition()
 {
 	return condition;
 }
 
-void Water:: clear_water()
+void Water::clear_water()
 {
 	condition = 1;
 }
@@ -70,11 +70,11 @@ Fish::~Fish()
 Fish::Fish()
 {
 	hunger = 100;
-	x = rand() % 900 ;
+	x = rand() % 900;
 	y = rand() % 900;
-	speed = 20;
+	speed = 2;
 }
-void Fish:: set_speed(int sp)
+void Fish::set_speed(int sp)
 {
 	speed = sp;
 }
@@ -84,22 +84,37 @@ void Fish::getting_hungrier()
 	while (hunger != 0)
 	{
 		hunger -= 1;
-		sleep(10);
+		_sleep(10000);
 	}
 }
 
-	void Fish::random_moving()
+void Fish::random_moving()
 {
-		int xrand, yrand;
-		xrand = -1 + rand() % 3;
-		yrand = -1 + rand() % 3;
-			x = x + randx*(rand() % speed);
-			y = y + randy*(rand() % speed);
-			if (abs(x) > length)
-				x = x - 2 * randx*(rand() % speed);
-			if (abs(y) > height)
-				y = y - 2 * randy*(rand() % speed);
-
+	int xrand, yrand;
+	xrand = -1 + rand() % 3;
+	yrand = -1 + rand() % 3;
+	x = x + xrand*(rand() % speed);
+	y = y + yrand*(rand() % speed);
+	if (x < length)
+		x = x +  xrand*(rand() % speed);
+	if (y < height)
+		y = y +  xrand*(rand() % speed);
+	if (abs(x) > length)
+		x = x - 2 * xrand*(rand() % speed);
+	if (abs(y) > height)
+		y = y - 2 * yrand*(rand() % speed);
+	cout << x << ";";
+	cout << y << endl;
 }
-
-
+int main()
+{
+	Fish a; int i = 1;
+	Rectangle();
+	Fish();
+	while (i = 1)
+	{
+		a.random_moving();
+		_sleep(1);
+	}
+	return 0;
+}

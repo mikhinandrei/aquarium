@@ -1,7 +1,7 @@
 #pragma once
 class Rectangle
 {
-private:
+protected:
 	int length, height;
 public:
 	Rectangle();
