@@ -9,8 +9,8 @@ using namespace std;
 
 Rectangle::Rectangle()
 {
-	length = 900;
-	height = 900;
+	length = 0;
+	height = 0;
 }
 
 
