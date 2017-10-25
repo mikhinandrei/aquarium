@@ -103,18 +103,4 @@ void Fish::random_moving()
 		x = x - 2 * xrand*(rand() % speed);
 	if (abs(y) > height)
 		y = y - 2 * yrand*(rand() % speed);
-	cout << x << ";";
-	cout << y << endl;
-}
-int main()
-{
-	Fish a; int i = 1;
-	Rectangle();
-	Fish();
-	while (i = 1)
-	{
-		a.random_moving();
-		_sleep(1);
-	}
-	return 0;
 }
