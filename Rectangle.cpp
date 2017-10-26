@@ -1,14 +1,15 @@
 #include "stdafx.h"
 #include "Rectangle.h"
 #include <iostream>
+
 using namespace std;
 
 
 
 Rectangle::Rectangle()
 {
-	length = 0;
-	height = 0;
+	length = 900;
+	height = 900;
 }
 
 
@@ -63,14 +64,15 @@ void Water::clear_water()
 }
 Fish::~Fish()
 {
-
+	cout << "Fish died"<<endl;
 }
 Fish::Fish()
 {
 	hunger = 100;
 	x = rand() % 900;
 	y = rand() % 900;
-	speed = 2;
+	speed = 20;
+	this->getting_hungrier();
 }
 void Fish::set_speed(int sp)
 {
@@ -82,8 +84,11 @@ void Fish::getting_hungrier()
 	while (hunger != 0)
 	{
 		hunger -= 1;
-		_sleep(10000);
+		_sleep(10);
+		cout << hunger << endl;
 	}
+		this->~Fish();
+		
 }
 
 void Fish::random_moving()
@@ -93,12 +98,12 @@ void Fish::random_moving()
 	yrand = -1 + rand() % 3;
 	x = x + xrand*(rand() % speed);
 	y = y + yrand*(rand() % speed);
-	if (x < length)
-		x = x +  xrand*(rand() % speed);
-	if (y < height)
-		y = y +  xrand*(rand() % speed);
-	if (abs(x) > length)
+	while (x < 0)
+		x = x - 2* xrand*(rand() % speed);
+	while(y < 0)
+		y = y -  2*xrand*(rand() % speed);
+	while (abs(x) > length)
 		x = x - 2 * xrand*(rand() % speed);
-	if (abs(y) > height)
+	while (abs(y) > height)
 		y = y - 2 * yrand*(rand() % speed);
 }
