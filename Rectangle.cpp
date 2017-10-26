@@ -8,8 +8,8 @@ using namespace std;
 
 Rectangle::Rectangle()
 {
-	length = 900;
-	height = 900;
+	length = 0;
+	height = 0;
 }
 
 
@@ -64,7 +64,7 @@ void Water::clear_water()
 }
 Fish::~Fish()
 {
-	cout << "Fish died"<<endl;
+	cout << "Fish died" << endl;
 }
 Fish::Fish()
 {
@@ -86,10 +86,14 @@ void Fish::getting_hungrier()
 		hunger -= 1;
 		random_moving();
 		_sleep(10);
-		cout << hunger << endl;
+
 	}
-		this->~Fish();
-		
+	this->~Fish();
+
+}
+void Fish::feed()
+{
+	hunger = 100;
 }
 
 void Fish::random_moving()
@@ -100,9 +104,9 @@ void Fish::random_moving()
 	x = x + xrand*(rand() % speed);
 	y = y + yrand*(rand() % speed);
 	while (x < 0)
-		x = x - 2* xrand*(rand() % speed);
-	while(y < 0)
-		y = y -  2*xrand*(rand() % speed);
+		x = x - 2 * xrand*(rand() % speed);
+	while (y < 0)
+		y = y - 2 * xrand*(rand() % speed);
 	while (abs(x) > length)
 		x = x - 2 * xrand*(rand() % speed);
 	while (abs(y) > height)

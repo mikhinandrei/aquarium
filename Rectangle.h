@@ -30,6 +30,7 @@ private:
 public:
 	Fish();
 	~Fish();
+	void feed();
 	void set_x(int);
 	void set_y(int);
 	int get_x();
