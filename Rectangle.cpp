@@ -84,6 +84,7 @@ void Fish::getting_hungrier()
 	while (hunger != 0)
 	{
 		hunger -= 1;
+		random_moving();
 		_sleep(10);
 		cout << hunger << endl;
 	}
