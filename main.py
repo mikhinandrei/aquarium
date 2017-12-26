@@ -18,7 +18,7 @@ class Fish(QRect):
         self.type_ = random.choice(FISHES) 
 
         self.x = random.randint(0, 945)
-        self.y = random.randint(0, 550)
+        self.y = random.randint(0, 600)
         self.speed = 20
         self.hunger = 100
 
@@ -53,13 +53,13 @@ class Fish(QRect):
         self.y += y * self.speed
 
         if self.x > 945:
-            self.x -= 2 * x * self.speed
+            self.x -= 2 * abs(x) * self.speed
         if self.y > 550:
-            self.y -= 2 * y * self.speed
-        if self.x < 100:
-            self.x += 2 * x * self.speed
-        if self.y < 150:
-            self.y += 2 * y * self.speed
+            self.y -= 2 * abs(y) * self.speed
+        if self.x < 0:
+            self.x += 2 * abs(x) * self.speed
+        if self.y < 0:
+            self.y += 2 * abs(y) * self.speed
 
         self.moveTo(self.x, self.y)
 
